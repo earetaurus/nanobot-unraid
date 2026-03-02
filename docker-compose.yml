@@ -3,7 +3,7 @@ x-common-config: &common-config
     context: .
     dockerfile: Dockerfile
   volumes:
-    - ~/.nanobot:/root/.nanobot
+    - /mnt/user/appdata/nanobot:/root/.nanobot
 
 services:
   nanobot-gateway:
@@ -16,8 +16,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
-          memory: 1G
+          cpus: '2'
+          memory: 2G
         reservations:
           cpus: '0.25'
           memory: 256M
